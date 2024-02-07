@@ -1,9 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import java.awt.*;
-import java.util.List;
+import java.time.Duration;
 
 public class BasePage {
     WebDriver driver;
@@ -16,21 +14,17 @@ public class BasePage {
         return driver.findElement(locator);
     }
 
-    public List<WebElement> findAll(By locator){
-        return driver.findElements(locator);
-    }
-
     public void click(By locator){
         find(locator).click();
-    }
-
-    public void type(By locator , String text){
-        find(locator).sendKeys(text);
     }
 
     public Boolean isDisplayed(By locator){
         return find(locator).isDisplayed();
     }
 
+    public void implWait(int i) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(i));
+
+    }
 
 }

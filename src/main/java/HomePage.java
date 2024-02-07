@@ -11,6 +11,6 @@ public class HomePage extends BasePage {
     }
     public void goCareerPage() {
         click(companyPageLocator);
-
+        click(careersPageLocator);
     }
 }
