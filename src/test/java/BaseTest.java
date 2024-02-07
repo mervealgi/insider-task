@@ -1,14 +1,21 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
-public class TestCase {
 
-    @Test
-    public void Test1(){
+public class BaseTest {
+    WebDriver chromeDriver = new ChromeDriver();
+
+    @BeforeTest
+    public void setUp(){
         System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
-        WebDriver chromeDriver = new ChromeDriver();
         chromeDriver.get("https://useinsider.com/");
+
+    }
+
+    @AfterTest
+    public void tearDown(){
 
         chromeDriver.quit();
     }
