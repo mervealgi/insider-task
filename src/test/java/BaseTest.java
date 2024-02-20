@@ -15,7 +15,7 @@ public class BaseTest {
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.get("https://www.amazon.com");
+        driver.get("https://useinsider.com/");
     }
 
     @AfterAll
